@@ -25,9 +25,15 @@ public class App
     	sentence = "le fait est que j' ai peu de biens .";
     	System.out.println(sentence);
     	System.out.println(rules.validateSequence(sentence));
-    	
+
     	System.out.println("***** PHRASE 3 *****");
     	sentence = "j' ai bien du mal à faire ce que les autres font bien .";
+    	System.out.println(sentence);
+    	System.out.println(rules.validateSequence(sentence));
+    	
+//    	check this
+    	System.out.println("***** PHRASE 4 *****");
+    	sentence = "bien des gens ont fait un peu de bien .";
     	System.out.println(sentence);
     	System.out.println(rules.validateSequence(sentence));
     	

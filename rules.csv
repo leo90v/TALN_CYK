@@ -69,8 +69,12 @@ SUB;bien qu'
 PONCTSEG;,
 PONCTFIN;.
 
+############################################################################
+############################################################################
+
 #1er phrase
-#Le bien qu’il fait, il le fait bien.
+#le bien qu’ il fait , il le fait bien .
+
 S;PROP;PONCTFIN
 PROP;PRNSUJ;VRB
 PROP;GNAPP;PROP
@@ -82,8 +86,9 @@ GNAPP;GN;PONCTSEG
 GV;PRNOBJ;VRB
 GV;GV;ADV
 
+############################################################################
 #2eme phrase
-#Le fait est que j'ai peu de biens.
+#le fait est que j' ai peu de biens .
 
 ADVQ;peu
 DETPREP;ADVQ;PREP
@@ -94,8 +99,10 @@ GV;GV;GNPREP
 GV;VRB;PROPREL
 PROP;GN;GV
 
+############################################################################
 #3eme phrase
-#J'ai bien du mal à faire ce que les autres font bien. 
+#j' ai bien du mal à faire ce que les autres font bien . 
+
 PRNREL;ce que
 GV;VRB;ADV
 PROPREL;PRNREL;PROP
@@ -107,10 +114,12 @@ GV;GV;GN
 PROP;PROP;PROPREL
 
 #4eme phrase
-#Bien des gens ont fait un peu de bien.
+#bien des gens ont fait un peu de bien .
 
+############################################################################
 #5eme phrase
-#Bien qu' il ait fait du bien, il ne l' a pas bien fait. 
+#bien qu' il ait fait du bien , il ne l' a pas bien fait . 
+
 ADVQ;bien
 ADVD;pas
 ADVG;ne
@@ -123,3 +132,4 @@ GV;AUX;GVD
 GV;PRNOBJ;GV
 GV;ADVG;GV
 PROP;SUBPROPAPP;PROP
+############################################################################
