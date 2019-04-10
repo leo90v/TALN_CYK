@@ -8,7 +8,7 @@ public class App
     {
     	RuleBase rules = null;
     	try {
-			rules = new RuleBase("D:\\OneDrive\\Documentos\\DECOL\\eclipse-workspace\\TALN_CYK\\src\\rules.csv");
+			rules = new RuleBase("rules.csv");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
