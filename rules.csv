@@ -49,6 +49,7 @@ VRB;ai
 VRB;ait
 VRB;a
 VRB;faire
+VRB;ont
 
 PPAS;fait
 
@@ -59,6 +60,7 @@ AUX;est
 AUX;ai
 AUX;ait
 AUX;a
+AUX;ont
 
 PREP;de
 PREP;à
@@ -116,7 +118,9 @@ PROP;PROP;PROPREL
 #4eme phrase
 #bien des gens ont fait un peu de bien .
 GNPREP;ADVQ;GNPREP
-GN;ADVQ;GN
+GNPREP;PREP;NOMC
+ADVQ;DET;ADVQ
+PROP;GNPREP;GV
 
 ############################################################################
 #5eme phrase

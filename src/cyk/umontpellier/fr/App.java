@@ -31,7 +31,6 @@ public class App
     	System.out.println(sentence);
     	System.out.println(rules.validateSequence(sentence));
     	
-//    	check this
     	System.out.println("***** PHRASE 4 *****");
     	sentence = "bien des gens ont fait un peu de bien .";
     	System.out.println(sentence);
