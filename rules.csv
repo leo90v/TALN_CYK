@@ -115,6 +115,8 @@ PROP;PROP;PROPREL
 
 #4eme phrase
 #bien des gens ont fait un peu de bien .
+GNPREP;ADVQ;GNPREP
+GN;ADVQ;GN
 
 ############################################################################
 #5eme phrase
