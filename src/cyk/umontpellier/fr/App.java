@@ -35,9 +35,14 @@ public class App
     	sentence = "bien des gens ont fait un peu de bien .";
     	System.out.println(sentence);
     	System.out.println(rules.validateSequence(sentence));
-    	
+
     	System.out.println("***** PHRASE 5 *****");
     	sentence = "bien qu' il ait fait du bien , il ne l' a pas bien fait .";
+    	System.out.println(sentence);
+    	System.out.println(rules.validateSequence(sentence));
+    	
+    	System.out.println("***** PHRASE 6 *****");
+    	sentence = "j' ai fait du bien que les gens ont fait .";
     	System.out.println(sentence);
     	System.out.println(rules.validateSequence(sentence));
     	
