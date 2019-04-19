@@ -19,32 +19,37 @@ public class App
     	System.out.println("***** PHRASE 1 *****");
     	String sentence = "le bien qu' il fait , il le fait bien .";
     	System.out.println(sentence);
-    	System.out.println(rules.validateSequence(sentence));
+    	rules.validateSequence2(sentence);
     	
     	System.out.println("***** PHRASE 2 *****");
     	sentence = "le fait est que j' ai peu de biens .";
     	System.out.println(sentence);
-    	System.out.println(rules.validateSequence(sentence));
+    	rules.validateSequence2(sentence);
 
     	System.out.println("***** PHRASE 3 *****");
     	sentence = "j' ai bien du mal à faire ce que les autres font bien .";
     	System.out.println(sentence);
-    	System.out.println(rules.validateSequence(sentence));
+    	rules.validateSequence2(sentence);
     	
     	System.out.println("***** PHRASE 4 *****");
     	sentence = "bien des gens ont fait un peu de bien .";
     	System.out.println(sentence);
-    	System.out.println(rules.validateSequence(sentence));
+    	rules.validateSequence2(sentence);
 
     	System.out.println("***** PHRASE 5 *****");
     	sentence = "bien qu' il ait fait du bien , il ne l' a pas bien fait .";
     	System.out.println(sentence);
-    	System.out.println(rules.validateSequence(sentence));
+    	rules.validateSequence2(sentence);
     	
     	System.out.println("***** PHRASE 6 *****");
     	sentence = "j' ai fait du bien que les gens ont fait .";
     	System.out.println(sentence);
-    	System.out.println(rules.validateSequence(sentence));
+    	rules.validateSequence2(sentence);
+    	
+    	/*System.out.println("***** PHRASE 1 *****");
+    	String sentence2 = "le bien qu' il fait , il le fait bien .";
+    	System.out.println(sentence);
+    	System.out.println(rules.validateSequence2(sentence2));*/
     	
     }
 }

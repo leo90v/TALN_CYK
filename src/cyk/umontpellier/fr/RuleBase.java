@@ -10,6 +10,7 @@ public class RuleBase {
 	private ArrayList<TerminalRule> terminalRules;
 	private ArrayList<NonTerminalRule> nonTerminalRules;
 	private ArrayList<String>[][] M;
+	private ArrayList<Node>[][] M2;
 	private int n;
 	private String[] words;
 	private ArrayList<String> bigrams;
@@ -127,5 +128,78 @@ public class RuleBase {
 			table.addRow(row);
 		}
 		table.print();
+	}
+	
+	public boolean validateSequence2(String sequence) {
+		boolean result = false;
+		
+		for (String s : calculateSequences(sequence.trim())) {
+			words = s.trim().split("/");
+			n = words.length;
+
+			M2 = new ArrayList[n][n];
+
+			for (int i = 0; i < n; i++)
+				for (int j = 0; j < n; j++)
+					M2[i][j] = new ArrayList<Node>();
+
+			for (int j = 0; j < n; j++)
+				for (TerminalRule r : terminalRules)
+					if (words[j].equals(r.getJ()))
+						if (!M2[0][j].contains(r.getA()))
+							M2[0][j].add(new Node(null, null, r.getA(), r.getJ()));
+			
+			for (int i = 1; i < n; i++)
+				for (int j = 0; j < n - i; j++)
+					for (int k = 0; k < i; k++) {
+						ArrayList<Node> b = M2[k][j];
+						ArrayList<Node> c = M2[i - k - 1][j + k + 1];
+						for (NonTerminalRule r : nonTerminalRules)
+							for (Node B : b)
+								for (Node C : c)
+									if (B.equals(r.getB()) && C.equals(r.getC())) {
+										Node node = new Node(B,C,r.getA(),null);
+										if (!M2[i][j].contains(node))
+											M2[i][j].add(node);
+									}
+					}
+
+			if (M2[n - 1][0].contains(new Node(null, null, "S", null))) {
+				printMatrix2();
+				System.out.println(getTree2(M2[n - 1][0].get(0))+"\n");
+				result = true;
+			}
+		}
+		return result;
+	}
+	
+	public void printMatrix2() {
+		TablePrinter table = new TablePrinter(words);
+		for (int i = 0; i < n; i++) {
+			String[] row = new String[n];
+			for (int j = 0; j < n; j++) {
+				String cell = "";
+				for (Node s : M2[i][j])
+					cell = cell + s + ",";
+
+				if (!cell.isEmpty())
+					cell = cell.substring(0, cell.length() - 1);
+				row[j] = cell;
+			}
+			table.addRow(row);
+		}
+		table.print();
+	}
+	
+	public String getTree(Node node) {
+		if (node.getLeft() == null && node.getRight() == null)
+	        return node.getWord()+"_"+node.getType();
+	    return "["+getTree(node.getLeft())+" "+getTree(node.getRight())+"]_"+node.getType();
+	}
+	
+	public String getTree2(Node node) {
+		if (node.getLeft() == null && node.getRight() == null)
+	        return "[" + node.getType() + "\\\\" + node.getWord() + "]";
+	    return "["+node.getType()+" "+getTree2(node.getLeft())+" "+getTree2(node.getRight())+"]";
 	}
 }
