@@ -9,17 +9,16 @@ public class PrintTree {
 	public void print(String content) throws IOException {
 
     	String tex = 
-    			"\\documentclass[11pt]{article}\n" + 
-    			"\\usepackage[utf8]{inputenc}\n" + 
-    			"\n" + 
+				"\\documentclass[a4paper]{article}\n" + 
+				"\\pagestyle{empty}\n" + 
+				"\\usepackage{pdflscape}\n" + 
+				"\\usepackage[utf8]{inputenc}\n" + 
+				"\\usepackage[T1]{fontenc}\n" + 
+				"\\usepackage[linguistics]{forest}\n" + 
+				"\\usepackage{geometry}\n" + 
+				"\\usepackage{pdflscape}\n" + 
+				"\\textwidth = 800pt\n" +
     			"\\begin{document}\n" + 
-    			"\n" + 
-    			"\\begin{center}\n" + 
-    			" \\begin{Huge}\n" + 
-    			" Delete Me !!!\n" + 
-    			" \\end{Huge}\n" + 
-    			"\\end{center}\n" + 
-    			" \\vspace{2.5cm} \n" + 
     			" \n" + 
     			content +
     			"\n" + 

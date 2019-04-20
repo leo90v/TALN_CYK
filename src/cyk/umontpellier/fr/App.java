@@ -43,8 +43,15 @@ public class App
         	// printing the Tree as well
         	
         	//adding what we want
-        	content += s + "\\\\ \\vspace{0.3cm} \\\\" ;
-        	
+        	content = content + "\n\n" +
+        			"\\begin{landscape}\n" + 
+        			"\\begin{forest}\n" + 
+        			//Stringtree
+        			"\n" + 
+        			"\\end{forest}\n" + 
+        			"\\end{landscape}\n" + 
+        			"\\clearpage\n\n"
+        	;
 		}
     	PrintTree pdf = new PrintTree();
     	pdf.print(content);
