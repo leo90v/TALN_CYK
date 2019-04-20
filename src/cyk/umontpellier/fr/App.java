@@ -9,7 +9,7 @@ public class App
 	
 	
 	
-    public static void main( String[] args ) throws IOException 
+    public static void main( String[] args ) throws IOException, InterruptedException 
     {
     	RuleBase rules = null;
     	try {

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class PrintTree {
 	
-	public void print(String content) throws IOException {
+	public void print(String content) throws IOException, InterruptedException {
 
     	String tex = 
 				"\\documentclass[a4paper]{article}\n" + 
@@ -32,6 +32,7 @@ public class PrintTree {
     	
         String[] cmd = { "bash", "-c", "./test.sh tree" };
         Process p = Runtime.getRuntime().exec(cmd);
+        p.waitFor();
 	}
 	
 }
