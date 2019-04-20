@@ -1,6 +1,7 @@
 package cyk.umontpellier.fr;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class App 
 {
@@ -13,43 +14,45 @@ public class App
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	
+     	ArrayList<String> Sentences = new ArrayList<String>();
+    	Sentences.add("le bien qu' il fait , il le fait bien .");
+    	Sentences.add("le fait est que j' ai peu de biens .");
+    	Sentences.add("j' ai bien du mal à faire ce que les autres font bien .");
+    	Sentences.add("bien qu' il ait fait du bien , il ne l' a pas bien fait .");
+    	Sentences.add("bien des gens ont fait un peu de bien .");
+    	Sentences.add("j' ai fait du bien que les gens ont fait .");
+    	
     	System.out.println("***** RÈGLES *****");
     	System.out.println(rules.toString());
     	
-    	System.out.println("***** PHRASE 1 *****");
-    	String sentence = "le bien qu' il fait , il le fait bien .";
-    	System.out.println(sentence);
-    	rules.validateSequence2(sentence);
-    	
-    	System.out.println("***** PHRASE 2 *****");
-    	sentence = "le fait est que j' ai peu de biens .";
-    	System.out.println(sentence);
-    	rules.validateSequence2(sentence);
-
-    	System.out.println("***** PHRASE 3 *****");
-    	sentence = "j' ai bien du mal à faire ce que les autres font bien .";
-    	System.out.println(sentence);
-    	rules.validateSequence2(sentence);
-    	
-    	System.out.println("***** PHRASE 4 *****");
-    	sentence = "bien des gens ont fait un peu de bien .";
-    	System.out.println(sentence);
-    	rules.validateSequence2(sentence);
-
-    	System.out.println("***** PHRASE 5 *****");
-    	sentence = "bien qu' il ait fait du bien , il ne l' a pas bien fait .";
-    	System.out.println(sentence);
-    	rules.validateSequence2(sentence);
-    	
-    	System.out.println("***** PHRASE 6 *****");
-    	sentence = "j' ai fait du bien que les gens ont fait .";
-    	System.out.println(sentence);
-    	rules.validateSequence2(sentence);
-    	
-    	/*System.out.println("***** PHRASE 1 *****");
-    	String sentence2 = "le bien qu' il fait , il le fait bien .";
-    	System.out.println(sentence);
-    	System.out.println(rules.validateSequence2(sentence2));*/
+    	int i=1;
+    	for (String s : Sentences) {
+        	System.out.println("***** PHRASE "+ i++ +" *****");
+        	System.out.println(s);
+        	System.out.println(rules.validateSequence(s));
+        	
+        	// printing the Tree as well
+        	String content = "";   
+        	String tex = 
+        			"\\documentclass[11pt]{article}\n" + 
+        			"\\usepackage[utf8]{inputenc}\n" + 
+        			"\n" + 
+        			"\\begin{document}\n" + 
+        			"\n" + 
+        			"\\begin{center}\n" + 
+        			" \\begin{Huge}\n" + 
+        			" Delete Me !!!\n" + 
+        			" \\end{Huge}\n" + 
+        			"\\end{center}\n" + 
+        			" \\vspace{2.5cm} \n" + 
+        			" \n" + 
+        			content +
+        			"\n" + 
+        			"\\end{document}\n" + 
+        			"";
+        	
+		}
     	
     }
 }
