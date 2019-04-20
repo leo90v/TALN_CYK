@@ -1,8 +1,6 @@
 package cyk.umontpellier.fr;
 
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -38,7 +36,7 @@ public class App
     	for (String s : Sentences) {
         	System.out.println("***** PHRASE "+ i++ +" *****");
         	System.out.println(s);
-        	System.out.println(rules.validateSequence(s));
+        	System.out.println(rules.validateSequence2(s));
         	
         	// printing the Tree as well
         	
@@ -46,7 +44,7 @@ public class App
         	content = content + "\n\n" +
         			"\\begin{landscape}\n" + 
         			"\\begin{forest}\n" + 
-        			//Stringtree
+        			rules.getTree() +
         			"\n" + 
         			"\\end{forest}\n" + 
         			"\\end{landscape}\n" + 

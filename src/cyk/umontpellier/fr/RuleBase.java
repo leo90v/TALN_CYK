@@ -14,6 +14,7 @@ public class RuleBase {
 	private int n;
 	private String[] words;
 	private ArrayList<String> bigrams;
+	private String tree;
 
 	public RuleBase(String path) throws FileNotFoundException {
 		terminalRules = new ArrayList<>();
@@ -132,6 +133,7 @@ public class RuleBase {
 	
 	public boolean validateSequence2(String sequence) {
 		boolean result = false;
+		tree = "";
 		
 		for (String s : calculateSequences(sequence.trim())) {
 			words = s.trim().split("/");
@@ -166,7 +168,11 @@ public class RuleBase {
 
 			if (M2[n - 1][0].contains(new Node(null, null, "S", null))) {
 				printMatrix2();
-				System.out.println(getTree2(M2[n - 1][0].get(0))+"\n");
+				if (tree == "") {
+					tree = getTree2(M2[n - 1][0].get(0));
+					System.out.println(tree+"\n");
+				}
+					
 				result = true;
 			}
 		}
@@ -191,15 +197,19 @@ public class RuleBase {
 		table.print();
 	}
 	
-	public String getTree(Node node) {
+	private String getTree(Node node) {
 		if (node.getLeft() == null && node.getRight() == null)
 	        return node.getWord()+"_"+node.getType();
 	    return "["+getTree(node.getLeft())+" "+getTree(node.getRight())+"]_"+node.getType();
 	}
 	
-	public String getTree2(Node node) {
+	private String getTree2(Node node) {
 		if (node.getLeft() == null && node.getRight() == null)
 	        return "[" + node.getType() + "\\\\" + node.getWord() + "]";
 	    return "["+node.getType()+" "+getTree2(node.getLeft())+" "+getTree2(node.getRight())+"]";
+	}
+	
+	public String getTree() {
+		return tree;
 	}
 }
