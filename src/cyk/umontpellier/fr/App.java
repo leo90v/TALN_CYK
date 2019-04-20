@@ -8,7 +8,10 @@ import java.util.ArrayList;
 
 public class App 
 {
-    public static void main( String[] args ) throws IOException
+	
+	
+	
+    public static void main( String[] args ) throws IOException 
     {
     	RuleBase rules = null;
     	try {
@@ -43,31 +46,8 @@ public class App
         	content += s + "\\\\ \\vspace{0.3cm} \\\\" ;
         	
 		}
+    	PrintTree pdf = new PrintTree();
+    	pdf.print(content);
     	
-    	String tex = 
-    			"\\documentclass[11pt]{article}\n" + 
-    			"\\usepackage[utf8]{inputenc}\n" + 
-    			"\n" + 
-    			"\\begin{document}\n" + 
-    			"\n" + 
-    			"\\begin{center}\n" + 
-    			" \\begin{Huge}\n" + 
-    			" Delete Me !!!\n" + 
-    			" \\end{Huge}\n" + 
-    			"\\end{center}\n" + 
-    			" \\vspace{2.5cm} \n" + 
-    			" \n" + 
-    			content +
-    			"\n" + 
-    			"\\end{document}\n" + 
-    			"";
-    	
-        BufferedWriter writer = new BufferedWriter(new FileWriter("tree.tex"));
-        writer.write(tex);
-         
-        writer.close();
-    	
-        String[] cmd = { "bash", "-c", "./test.sh tree" };
-        Process p = Runtime.getRuntime().exec(cmd);
     }
 }
